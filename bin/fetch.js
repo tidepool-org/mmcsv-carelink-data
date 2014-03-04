@@ -15,11 +15,10 @@ function fetch (opts) {
     console.error(opts.help( ));
     process.exit(1);
   }
+  opts.daysAgo = opts.days;
   if (opts.json) {
     out = es.pipeline(out, mmcsv.parse.all( ), es.stringify( ));
   }
-  var stream = es.pipeline(mmcsv.fetch(opts), out);
-  stream.pipe(process.stdout);
-
+  mmcsv.fetch(opts).pipe(out).pipe(process.stdout);
 }
 module.exports = fetch;

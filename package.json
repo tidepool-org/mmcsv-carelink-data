@@ -7,6 +7,7 @@
   "author": "Tidepool contributors",
   "license": "BSD-2",
   "dependencies": {
+    "amoeba": "0.0.6",
     "common": "0.2.5",
     "event-stream": "3.1.0",
     "moment": "2.5.1",
@@ -47,10 +48,7 @@
         "lib/parse",
         "lib/util"
       ]
-    },
-    "carelink_security": "https://carelink.minimed.com/patient/j_security_check",
-    "carelink_login": "https://carelink.minimed.com/patient/main/login.do",
-    "carelink_csv": "https://carelink.minimed.com/patient/main/selectCSV.do"
+    }
   },
   "devDependencies": {
     "mocha": "1.17.1",
