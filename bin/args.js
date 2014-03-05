@@ -17,9 +17,6 @@ function parse (args) {
     case 'fetch':
       content = fs.readFileSync(__dirname + '/fetch.txt').toString( );
       break;
-    case 'parse':
-      content = fs.readFileSync(__dirname + '/parse.txt').toString( );
-      break;
     default:
       break;
   }
