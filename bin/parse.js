@@ -28,8 +28,6 @@ var file = process.argv[2];
 
 rx.Node.fromStream(fs.createReadStream(file))
   .apply(carelink.fromCsv)
-  .filter(function(e){ return e.type === 'bolus' || e.type === 'wizard'; })
-  .takeLast(150)
   .subscribe(
   function (e) {
     console.log('%j', e);
