@@ -64,7 +64,9 @@
       "carbRatio": 13,
       "insulinSensitivity": 45,
       "carbInput": 64,
+      "carbUnits": "grams",
       "bgInput": 137,
+      "bgUnits": "mg dl",
       "correctionEstimate": 0.2,
       "foodEstimate": 4.9,
       "activeInsulin": 0
