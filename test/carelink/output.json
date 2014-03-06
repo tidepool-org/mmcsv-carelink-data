@@ -21,9 +21,8 @@
     "deviceTime": "2013-10-05T20:17:54",
     "value": 5.4,
     "programmed": 5.4,
-    "uploadId": "AABBCCDD",
-    "uploadSeqNum": 191,
     "deviceId": "Paradigm Revel - 523",
+    "joinKey": "f9lccoc8329i8gtoq9nclu94l7v916m5",
     "company": "carelink"
   },
   {
@@ -39,9 +38,8 @@
     "deviceTime": "2014-01-25T23:35:12",
     "value": 3.6,
     "programmed": 3.6,
-    "uploadId": "52963854",
-    "uploadSeqNum": 424,
     "deviceId": "Paradigm 522",
+    "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
     "company": "carelink"
   },
   {
@@ -51,16 +49,13 @@
     "value": 1.7,
     "programmed": 2.3,
     "duration": 3600000,
-    "uploadId": "52963854",
-    "uploadSeqNum": 425,
     "deviceId": "Paradigm 522",
+    "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
     "company": "carelink"
   },
   {
     "type": "wizard",
     "deviceTime": "2014-02-09T20:45:16",
-    "uploadId": "52963854",
-    "uploadSeqNum": 110,
     "deviceId": "Paradigm 522",
     "payload": {
       "estimate": 5.1,
@@ -74,6 +69,7 @@
       "foodEstimate": 4.9,
       "activeInsulin": 0
     },
+    "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
     "company": "carelink"
   }
 ]
