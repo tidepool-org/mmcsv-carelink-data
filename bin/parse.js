@@ -33,5 +33,5 @@ rx.Node.fromStream(fs.createReadStream(file))
     console.log('%j', e);
   },
   function (err) {
-    console.log(err);
+    throw err;
   });
