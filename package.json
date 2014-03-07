@@ -1,12 +1,14 @@
 {
   "name": "tidepool-mmcsv-carelink-data",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Scrape Carelink and Convert stream of carelink csv to text",
   "main": "lib/index.js",
   "repository": "https://github.com/tidepool-org/mmcsv-carelink-data.git",
   "author": "Tidepool contributors",
   "license": "BSD-2",
-  "files": [ "lib" ],
+  "files": [
+    "lib"
+  ],
   "dependencies": {
     "amoeba": "0.0.7",
     "common": "0.2.5",
