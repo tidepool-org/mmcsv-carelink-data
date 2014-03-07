@@ -7,23 +7,12 @@ var rx = require('rx');
 
 var bolusJoiner = require('../../lib/carelink/bolusJoiner.js');
 
-var tests = [
+var expectSuccess = [
   [
     'joins normal bolus with wizard',
     [
       { type: 'bolus', subType: 'normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' },
       { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' }
-    ],
-    [
-      { type: 'bolus', subType: 'normal', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' }
-    ]
-  ],
-  [
-    'joins normal bolus with wizard, wizard first',
-    [
-      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
-      { type: 'bolus', subType: 'normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' }
     ],
     [
       { type: 'bolus', subType: 'normal', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
@@ -46,17 +35,6 @@ var tests = [
     [
       { type: 'bolus', subType: 'square', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' },
       { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' }
-    ],
-    [
-      { type: 'bolus', subType: 'square', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' }
-    ]
-  ],
-  [
-    'joins square bolus with wizard, wizard first',
-    [
-      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
-      { type: 'bolus', subType: 'square', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' }
     ],
     [
       { type: 'bolus', subType: 'square', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
@@ -88,78 +66,13 @@ var tests = [
     ]
   ],
   [
-    'joins dual/normal bolus with dual/square and wizard, normal -> wizard -> square',
-    [
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' },
-      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' },
-      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' }
-    ],
-    [
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'bolus', subType: 'dual/square', payload: '1234', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' }
-    ]
-  ],
-  [
-    'joins dual/normal bolus with dual/square and wizard, square -> normal -> wizard',
-    [
-      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' },
-      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' }
-    ],
-    [
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'bolus', subType: 'dual/square', payload: '1234', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' }
-    ]
-  ],
-  [
-    'joins dual/normal bolus with dual/square and wizard, square -> wizard -> normal',
-    [
-      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
-      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' },
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' }
-    ],
-    [
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'bolus', subType: 'dual/square', payload: '1234', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' }
-    ]
-  ],
-  [
-    'joins dual/normal bolus with dual/square and wizard, wizard -> square -> normal',
-    [
-      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' },
-      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' }
-    ],
-    [
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'bolus', subType: 'dual/square', payload: '1234', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' }
-    ]
-  ],
-  [
-    'joins dual/normal bolus with dual/square and wizard, wizard -> normal -> square',
-    [
-      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' },
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' },
-      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' }
-    ],
-    [
-      { type: 'bolus', subType: 'dual/normal', payload: 'something', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'bolus', subType: 'dual/square', payload: '1234', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' },
-      { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: '9fhgr60koraej00e1knajr4vm07fl23r' }
-    ]
-  ],
-  [
     'on just dual/square and wizard, fabricates dual/normal and joins them, bolus -> wizard',
     [
       { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
       { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' }
     ],
     [
-      { type: 'bolus', subType: 'dual/normal', payload: '1234', deviceId: 'abc', joinKey: 'sk9lk5f1fd6ofgcugjlcdu0n98hqecc7', value: 0 },
+      { type: 'bolus', subType: 'dual/normal', payload: '1234', deviceId: 'abc', joinKey: 'sk9lk5f1fd6ofgcugjlcdu0n98hqecc7', value: 0, programmed: 0 },
       { type: 'bolus', subType: 'dual/square', payload: '1234', deviceId: 'abc', joinKey: 'sk9lk5f1fd6ofgcugjlcdu0n98hqecc7' },
       { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: 'sk9lk5f1fd6ofgcugjlcdu0n98hqecc7' }
     ]
@@ -171,24 +84,105 @@ var tests = [
       { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' }
     ],
     [
-      { type: 'bolus', subType: 'dual/normal', payload: '1234', deviceId: 'abc', joinKey: 'sk9lk5f1fd6ofgcugjlcdu0n98hqecc7', value: 0 },
+      { type: 'bolus', subType: 'dual/normal', payload: '1234', deviceId: 'abc', joinKey: 'sk9lk5f1fd6ofgcugjlcdu0n98hqecc7', value: 0, programmed: 0 },
       { type: 'bolus', subType: 'dual/square', payload: '1234', deviceId: 'abc', joinKey: 'sk9lk5f1fd6ofgcugjlcdu0n98hqecc7' },
       { type: 'wizard', payload: 'a_value', deviceId: 'abc', joinKey: 'sk9lk5f1fd6ofgcugjlcdu0n98hqecc7' }
+    ]
+  ]
+];
+
+var expectFailure = [
+  [
+    'joins normal bolus with wizard, wizard first',
+    [
+      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
+      { type: 'bolus', subType: 'normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' }
+    ]
+  ],
+  [
+    'joins square bolus with wizard, wizard first',
+    [
+      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
+      { type: 'bolus', subType: 'square', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' }
+    ]
+  ],
+  [
+    'joins dual/normal bolus with dual/square and wizard, normal -> wizard -> square',
+    [
+      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' },
+      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' },
+      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' }
+    ]
+  ],
+  [
+    'joins dual/normal bolus with dual/square and wizard, square -> normal -> wizard',
+    [
+      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
+      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' },
+      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' }
+    ]
+  ],
+  [
+    'joins dual/normal bolus with dual/square and wizard, square -> wizard -> normal',
+    [
+      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
+      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' },
+      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' }
+    ]
+  ],
+  [
+    'joins dual/normal bolus with dual/square and wizard, wizard -> square -> normal',
+    [
+      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' },
+      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' },
+      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' }
+    ]
+  ],
+  [
+    'joins dual/normal bolus with dual/square and wizard, wizard -> normal -> square',
+    [
+      { type: 'wizard', payload: 'a_value', uploadId: '1', uploadSeqNum: 25, deviceId: 'abc' },
+      { type: 'bolus', subType: 'dual/normal', payload: 'something', uploadId: '1', uploadSeqNum: 23, deviceId: 'abc' },
+      { type: 'bolus', subType: 'dual/square', payload: '1234', uploadId: '1', uploadSeqNum: 24, deviceId: 'abc' }
     ]
   ]
 ]
 
 describe('carelink/bolusJoiner.js', function () {
-  tests.forEach(function (test) {
-    it(test[0], function (done) {
-      function expectation(results) {
-        expect(results).deep.equals(test[2]);
-      }
+  describe('success!?', function(){
+    expectSuccess.forEach(function (test) {
+      it(test[0], function (done) {
+        function expectation(results) {
+          expect(results).deep.equals(test[2]);
+          done();
+        }
 
-      rx.Observable.fromArray(test[1])
-        .apply(bolusJoiner)
-        .toArray()
-        .subscribe(expectation, done, done);
+        rx.Observable.fromArray(test[1])
+          .apply(bolusJoiner)
+          .toArray()
+          .subscribe(expectation, done);
+      });
+    });
+  });
+
+  describe('it should fail, no really!', function(){
+    expectFailure.forEach(function (test) {
+      it(test[0], function (done) {
+
+
+        rx.Observable.fromArray(test[1])
+          .apply(bolusJoiner)
+          .toArray()
+          .subscribe(
+            function(results) {
+              done(new Error('Shouldn\'t have results on an expected fail test'));
+            },
+            function (err) {
+              expect(err).to.exist;
+              done();
+            }
+        );
+      });
     });
   });
 });
