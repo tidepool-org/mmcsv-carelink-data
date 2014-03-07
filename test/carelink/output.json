@@ -49,6 +49,52 @@
     "company": "carelink"
   },
   {
+    "type": "settings",
+    "deviceTime": "2013-12-19T20:03:59",
+    "scheduleName": "pattern a",
+    "subType": "basalSchedule",
+    "payload": [
+      { "rate": 0.95, "start": 0 },
+      { "rate": 0.9, "start": 3600000 },
+      { "rate": 1, "start": 10800000 },
+      { "rate": 1, "start": 14400000 },
+      { "rate": 1.1, "start": 18000000 },
+      { "rate": 1.15, "start": 21600000 },
+      { "rate": 1.05, "start": 32400000 },
+      { "rate": 1.1, "start": 54000000 },
+      { "rate": 1.05, "start": 61200000 }
+    ],
+    "company": "carelink"
+  },
+  {
+    "type": "settings",
+    "deviceTime": "2013-12-19T20:02:02",
+    "scheduleName": "pattern a",
+    "subType": "basalSchedule",
+    "payload": [
+      { "rate": 0.95, "start": 0 }
+    ],
+    "company": "carelink"
+  },
+  {
+    "type": "settings",
+    "deviceTime": "2013-12-19T20:01:27",
+    "scheduleName": "standard",
+    "subType": "basalSchedule",
+    "payload": [
+      { "rate": 0.8, "start": 0 },
+      { "rate": 0.75, "start": 3600000 },
+      { "rate": 0.85, "start": 10800000 },
+      { "rate": 0.9, "start": 14400000 },
+      { "rate": 0.9, "start": 18000000 },
+      { "rate": 0.95, "start": 21600000 },
+      { "rate": 0.9, "start": 32400000 },
+      { "rate": 0.95, "start": 54000000 },
+      { "rate": 0.9, "start": 61200000 }
+    ],
+    "company": "carelink"
+  },
+  {
     "type": "bolus",
     "subType": "dual/normal",
     "deviceTime": "2014-01-25T23:35:12",
