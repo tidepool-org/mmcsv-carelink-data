@@ -1,8 +1,9 @@
 [
   {
-    "_id": "settings123",
+    "_id": "u2vrerrbcegj35em6k34svlbeov11o78",
     "type": "settings",
     "deviceTime": "2014-02-15T12:00:00",
+    "deviceId": "neverland",
     "activeBasalSchedule": "standard",
     "units": {
       "carb": "grams",
@@ -52,9 +53,10 @@
     "company": "carelink"
   },
   {
-    "_id": "settings1234",
+    "_id": "mkv2qsiksefa708uopm7i35n33bfl6bf",
     "type": "settings",
     "deviceTime": "2014-03-01T12:00:00",
+    "deviceId": "neverland",
     "activeBasalSchedule": "pattern a",
     "units": {
       "carb": "grams",
@@ -108,12 +110,14 @@
     "deviceTime": "2010-12-15T00:04:00",
     "value": 120,
     "deviceId": "Paradigm 522",
+    "_id": "v3khmsjpj0g3nqtpkup0f48bmscr378q",
     "company": "carelink"
   },
   {
     "type": "settings",
     "subType": "bolusWizard",
     "deviceTime": "2013-12-19T20:08:07",
+    "deviceId": "Paradigm Revel - 723",
     "units": {
       "carb": "grams",
       "bg": "mg dL"
@@ -122,12 +126,14 @@
     "insulinSensitivity": [],
     "bgTarget": [],
     "phase": "end",
+    "_id": "28rju3r9v832b7pmpd49383ucfnb4a4e",
     "company": "carelink"
   },
   {
     "type": "settings",
     "subType": "bolusWizard",
     "deviceTime": "2013-12-19T20:08:07",
+    "deviceId": "Paradigm Revel - 723",
     "units": {
       "carb": "grams",
       "bg": "mg dL"
@@ -150,11 +156,13 @@
       { "low": 100, "high": 120, "start": 82800000 }
     ],
     "phase": "start",
+    "_id": "28rju3r9v832b7pmpd49383ucfnb4a4e",
     "company": "carelink"
   },
   {
     "type": "settings",
     "deviceTime": "2013-12-19T20:03:59",
+    "deviceId": "Paradigm Revel - 723",
     "scheduleName": "pattern a",
     "subType": "basalSchedule",
     "payload": [
@@ -168,21 +176,25 @@
       { "rate": 1.1, "start": 54000000 },
       { "rate": 1.05, "start": 61200000 }
     ],
+    "_id": "sambhgpehkkc1nf6a5ivjp97l236vu2a",
     "company": "carelink"
   },
   {
     "type": "settings",
     "deviceTime": "2013-12-19T20:02:02",
+    "deviceId": "Paradigm Revel - 723",
     "scheduleName": "pattern a",
     "subType": "basalSchedule",
     "payload": [
       { "rate": 0.95, "start": 0 }
     ],
+    "_id": "oc239hq4l8h49fnbic7968bk932420fo",
     "company": "carelink"
   },
   {
     "type": "settings",
     "deviceTime": "2013-12-19T20:01:27",
+    "deviceId": "Paradigm Revel - 723",
     "scheduleName": "standard",
     "subType": "basalSchedule",
     "payload": [
@@ -196,6 +208,7 @@
       { "rate": 0.95, "start": 54000000 },
       { "rate": 0.9, "start": 61200000 }
     ],
+    "_id": "udcqfvgqmm2ldmu3te4vc0snlm6ddfj0",
     "company": "carelink"
   },
   {
@@ -206,6 +219,7 @@
     "programmed": 3.6,
     "deviceId": "Paradigm 522",
     "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
+    "_id": "tscn1r901v0bgbcnj4v5pk5c8rehsvlb",
     "company": "carelink"
   },
   {
@@ -217,6 +231,7 @@
     "duration": 3600000,
     "deviceId": "Paradigm 522",
     "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
+    "_id": "ebdptl9ss2b7dpcj07thscrivukalpr3",
     "company": "carelink"
   },
   {
@@ -238,6 +253,7 @@
       "activeInsulin": 0
     },
     "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
+    "_id": "l0ebruq4kuu5nvlfsh32jb2vptnhhijv",
     "company": "carelink"
   },
   {
@@ -245,6 +261,7 @@
     "deviceTime": "2013-10-05T21:03:51",
     "value": 90,
     "deviceId": "Paradigm Revel - 523",
+    "_id": "9ltov1jst7mj7aul5ua12oj7dggfi4m0",
     "company": "carelink"
   },
   {
@@ -255,6 +272,7 @@
     "programmed": 5.4,
     "deviceId": "Paradigm Revel - 523",
     "joinKey": "f9lccoc8329i8gtoq9nclu94l7v916m5",
+    "_id": "a36rmm9e3cacqk35nbhvm98a5jh42ngj",
     "company": "carelink"
   },
   {
@@ -264,6 +282,7 @@
     "scheduleName": "standard",
     "value": 0.65,
     "deviceId": "Paradigm Revel - 523",
+    "_id": "lvli77aue7p10c8f1en0k5p0nt9gn3gm",
     "company": "carelink"
   }
 ]
