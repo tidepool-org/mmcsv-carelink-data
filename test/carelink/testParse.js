@@ -15,23 +15,27 @@
  * == BSD2 LICENSE ==
  */
 
-// Require this to get things registered with rx
-require('../lib/rx');
-
 var fs = require('fs');
 
+var expect = require('salinity').expect;
 var rx = require('rx');
 
-var carelink = require('../lib/carelink');
+var carelink = require('../../lib/carelink');
 
-var file = process.argv[2];
-
-rx.Node.fromStream(fs.createReadStream(file))
-  .apply(carelink.fromCsv)
-  .subscribe(
-  function (e) {
-    console.log('%j', e);
-  },
-  function (err) {
-    throw err;
+describe('carelink/parse', function () {
+  it('should parse as expected', function (done) {
+    rx.Node.fromStream(fs.createReadStream(__dirname + '/input.csv'))
+      .apply(carelink.fromCsv)
+      .toArray()
+      .subscribe(
+      function(e) {
+        var expectation = JSON.parse(fs.readFileSync(__dirname + '/output.json'));
+        expect(e).deep.equals(expectation);
+        done();
+      },
+      function(err) {
+        done(err);
+      }
+    );
   });
+});

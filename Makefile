@@ -1,5 +1,5 @@
 
-TESTS=test/*.js
+TESTS=test
 
 BLANKET=--require blanket 
 travis-cov:

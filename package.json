@@ -1,65 +1,31 @@
 {
   "name": "tidepool-mmcsv-carelink-data",
-  "version": "0.0.4",
-  "description": "Scrape Carelink and Convert stream of mm csv to text",
-  "main": "index.js",
+  "version": "0.0.5",
+  "description": "Scrape Carelink and Convert stream of carelink csv to text",
+  "main": "lib/index.js",
   "repository": "https://github.com/tidepool-org/mmcsv-carelink-data.git",
   "author": "Tidepool contributors",
   "license": "BSD-2",
+  "files": [
+    "lib"
+  ],
   "dependencies": {
+    "amoeba": "0.0.7",
     "common": "0.2.5",
+    "csv-streamify": "0.9.0",
     "event-stream": "3.1.0",
+    "lodash": "2.4.1",
     "moment": "2.5.1",
     "optimist": "0.6.0",
     "request": "2.33.0",
-    "tabtab": "git://github.com/bewest/node-tabtab.git",
-    "util-extend": "~1.0.1",
-    "chrono-node": "~0.1.8"
-  },
-  "bin": {
-    "mmcsv": "bin/cmd.js"
-  },
-  "testling": {
-    "harness": "mocha",
-    "browsers": [
-      "ie/9..latest",
-      "chrome/20..latest",
-      "firefox/14..latest",
-      "safari/latest",
-      "opera/11.0..latest",
-      "iphone/6",
-      "ipad/6"
-    ],
-    "files": [
-      "test/simpleTest.js",
-      "test/test_validation.js",
-      "test/test_generation.js"
-    ]
-  },
-  "config": {
-    "blanket": {
-      "data-cover-never": [
-        "node"
-      ],
-      "pattern": [
-        "lib/desalinate",
-        "lib/generate",
-        "lib/parse",
-        "lib/util"
-      ]
-    },
-    "carelink_security": "https://carelink.minimed.com/patient/j_security_check",
-    "carelink_login": "https://carelink.minimed.com/patient/main/login.do",
-    "carelink_csv": "https://carelink.minimed.com/patient/main/selectCSV.do"
+    "rx": "2.2.13"
   },
   "devDependencies": {
-    "mocha": "1.17.1",
-    "should": "3.1.0",
-    "lodash": "2.4.1",
-    "mocha-lcov-reporter": "0.0.1",
-    "travis-cov": "0.2.4",
-    "coveralls": "2.6.1",
     "blanket": "1.1.6",
-    "tidepool-data-model": "0.0.7"
+    "coveralls": "2.6.1",
+    "mocha": "1.17.1",
+    "mocha-lcov-reporter": "0.0.1",
+    "salinity": "0.0.5",
+    "travis-cov": "0.2.4"
   }
 }
