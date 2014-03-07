@@ -25,8 +25,7 @@ var carelink = require('../../lib/carelink');
 describe('carelink/parse', function () {
   it('should parse as expected', function (done) {
     rx.Node.fromStream(fs.createReadStream(__dirname + '/input.csv'))
-      .passThroughStream(require('csv-streamify')({objectMode: true, columns: true, empty: null}))
-      .apply(carelink.parse)
+      .apply(carelink.fromCsv)
       .toArray()
       .subscribe(
       function(e) {
