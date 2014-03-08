@@ -114,6 +114,24 @@
     "company": "carelink"
   },
   {
+    "type": "basal-rate-change",
+    "deliveryType": "scheduled",
+    "deviceTime": "2013-10-05T02:00:00",
+    "scheduleName": "standard",
+    "value": 0.65,
+    "deviceId": "Paradigm Revel - 523",
+    "_id": "lvli77aue7p10c8f1en0k5p0nt9gn3gm",
+    "company": "carelink"
+  },
+  {
+    "type": "smbg",
+    "deviceTime": "2013-10-05T21:03:51",
+    "value": 90,
+    "deviceId": "Paradigm Revel - 523",
+    "_id": "9ltov1jst7mj7aul5ua12oj7dggfi4m0",
+    "company": "carelink"
+  },
+  {
     "type": "settings",
     "subType": "bolusWizard",
     "deviceTime": "2013-12-19T20:08:07",
@@ -257,14 +275,6 @@
     "company": "carelink"
   },
   {
-    "type": "smbg",
-    "deviceTime": "2013-10-05T21:03:51",
-    "value": 90,
-    "deviceId": "Paradigm Revel - 523",
-    "_id": "9ltov1jst7mj7aul5ua12oj7dggfi4m0",
-    "company": "carelink"
-  },
-  {
     "type": "bolus",
     "subType": "normal",
     "deviceTime": "2013-10-05T20:17:54",
@@ -273,16 +283,6 @@
     "deviceId": "Paradigm Revel - 523",
     "joinKey": "f9lccoc8329i8gtoq9nclu94l7v916m5",
     "_id": "a36rmm9e3cacqk35nbhvm98a5jh42ngj",
-    "company": "carelink"
-  },
-  {
-    "type": "basal-rate-change",
-    "deliveryType": "scheduled",
-    "deviceTime": "2013-10-05T02:00:00",
-    "scheduleName": "standard",
-    "value": 0.65,
-    "deviceId": "Paradigm Revel - 523",
-    "_id": "lvli77aue7p10c8f1en0k5p0nt9gn3gm",
     "company": "carelink"
   }
 ]
