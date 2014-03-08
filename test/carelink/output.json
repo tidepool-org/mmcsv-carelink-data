@@ -133,6 +133,18 @@
   },
   {
     "type": "settings",
+    "subType": "activeSchedule",
+    "deviceTime": "2013-12-07T11:51:05",
+    "deviceId": "Paradigm Veo - 754",
+    "uploadId": "52798728",
+    "uploadSeqNum": 246,
+    "scheduleName": "standard",
+    "previousSchedule": "pattern a",
+    "_id": "b5vf525gbol1b0g9grfsjojriugb2n9r",
+    "company": "carelink"
+  },
+  {
+    "type": "settings",
     "subType": "bolusWizard",
     "deviceTime": "2013-12-19T20:08:07",
     "deviceId": "Paradigm Revel - 723",
