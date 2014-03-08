@@ -155,7 +155,7 @@
     "carbRatio": [],
     "insulinSensitivity": [],
     "bgTarget": [],
-    "phase": "end",
+    "lifecycle": "end",
     "_id": "28rju3r9v832b7pmpd49383ucfnb4a4e",
     "company": "carelink"
   },
@@ -185,7 +185,7 @@
       { "low": 90, "high": 110, "start": 18000000 },
       { "low": 100, "high": 120, "start": 82800000 }
     ],
-    "phase": "start",
+    "lifecycle": "start",
     "_id": "28rju3r9v832b7pmpd49383ucfnb4a4e",
     "company": "carelink"
   },
@@ -284,6 +284,59 @@
     },
     "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
     "_id": "l0ebruq4kuu5nvlfsh32jb2vptnhhijv",
+    "company": "carelink"
+  },
+  {
+    "type": "settings",
+    "deviceTime": "2014-03-03T22:21:19",
+    "deviceId": "Paradigm Revel - 723",
+    "scheduleName": "standard",
+    "lifecycle": "end",
+    "subType": "basalSchedule",
+    "payload": [
+      { "rate": 0.8, "start": 0 },
+      { "rate": 0.75, "start": 3600000 },
+      { "rate": 0.85, "start": 10800000 },
+      { "rate": 0.9, "start": 14400000 },
+      { "rate": 0.9, "start": 18000000 },
+      { "rate": 0.95, "start": 21600000 },
+      { "rate": 0.9, "start": 32400000 },
+      { "rate": 0.95, "start": 54000000 },
+      { "rate": 0.9, "start": 61200000 }
+    ],
+    "_id": "qks3mklp82g2leset4kalsg5hc02inbk",
+    "company": "carelink"
+  },
+  {
+    "type": "settings",
+    "deviceTime": "2014-03-03T22:21:19",
+    "deviceId": "Paradigm Revel - 723",
+    "scheduleName": "pattern a",
+    "lifecycle": "end",
+    "subType": "basalSchedule",
+    "payload": [
+      { "rate": 0.95, "start": 0 },
+      { "rate": 0.9, "start": 3600000 },
+      { "rate": 1, "start": 10800000 },
+      { "rate": 1, "start": 14400000 },
+      { "rate": 1.1, "start": 18000000 },
+      { "rate": 1.15, "start": 21600000 },
+      { "rate": 1.05, "start": 32400000 },
+      { "rate": 1.1, "start": 54000000 },
+      { "rate": 1.05, "start": 61200000 }
+    ],
+    "_id": "qks3mklp82g2leset4kalsg5hc02inbk",
+    "company": "carelink"
+  },
+  {
+    "type": "settings",
+    "deviceTime": "2014-03-03T22:21:19",
+    "deviceId": "Paradigm Revel - 723",
+    "scheduleName": "pattern b",
+    "lifecycle": "end",
+    "subType": "basalSchedule",
+    "payload": [],
+    "_id": "qks3mklp82g2leset4kalsg5hc02inbk",
     "company": "carelink"
   },
   {
