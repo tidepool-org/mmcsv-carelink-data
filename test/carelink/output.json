@@ -288,6 +288,17 @@
   },
   {
     "type": "settings",
+    "subType": "activeSchedule",
+    "deviceTime": "2014-03-03T22:21:19",
+    "deviceId": "Paradigm Revel - 723",
+    "uploadId": "53021863",
+    "uploadSeqNum": 8,
+    "scheduleName": "standard",
+    "_id": "qks3mklp82g2leset4kalsg5hc02inbk",
+    "company": "carelink"
+  },
+  {
+    "type": "settings",
     "deviceTime": "2014-03-03T22:21:19",
     "deviceId": "Paradigm Revel - 723",
     "scheduleName": "standard",
