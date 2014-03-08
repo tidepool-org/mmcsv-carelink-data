@@ -1,6 +1,6 @@
 {
   "name": "tidepool-mmcsv-carelink-data",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Scrape Carelink and Convert stream of carelink csv to text",
   "main": "lib/index.js",
   "repository": "https://github.com/tidepool-org/mmcsv-carelink-data.git",
