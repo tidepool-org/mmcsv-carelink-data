@@ -140,6 +140,7 @@
     "uploadSeqNum": 246,
     "scheduleName": "standard",
     "previousSchedule": "pattern a",
+    "lifecycle": "start",
     "_id": "b5vf525gbol1b0g9grfsjojriugb2n9r",
     "company": "carelink"
   },
@@ -294,6 +295,7 @@
     "uploadId": "53021863",
     "uploadSeqNum": 8,
     "scheduleName": "standard",
+    "lifecycle": "end",
     "_id": "qks3mklp82g2leset4kalsg5hc02inbk",
     "company": "carelink"
   },
