@@ -17,7 +17,7 @@
 
 var es = require('event-stream');
 function fetch (opts) {
-  var mmcsv = require('../');
+  var mmcsv = require('../lib/index.js');
   var out = es.through( );
   if (!opts.username || !opts.password || !opts.days) {
     if (!opts.username) {
@@ -36,6 +36,6 @@ function fetch (opts) {
   if (opts.json) {
     out = es.pipeline(out, mmcsv.parse.all( ), es.stringify( ));
   }
-  mmcsv.fetch(opts).pipe(out).pipe(process.stdout);
+  mmcsv.carelink.fetch(opts).pipe(out).pipe(process.stdout);
 }
 module.exports = fetch;
