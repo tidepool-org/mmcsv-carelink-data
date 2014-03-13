@@ -218,7 +218,7 @@
       "pattern a": [],
       "standard": []
     },
-    "activeBasalSchedule": "pattern a",
+    "activeBasalSchedule": "standard",
     "_id": "oajbunsvkci14p5bg8gnpl8ibuujcj5i",
     "company": "carelink"
   },
