@@ -3,8 +3,8 @@
     "type": "cbg",
     "deviceTime": "2010-12-15T00:04:00",
     "value": 120,
-    "deviceId": "Paradigm 522",
-    "_id": "v3khmsjpj0g3nqtpkup0f48bmscr378q",
+    "deviceId": "Paradigm Revel - 723",
+    "_id": "4nrqk9d32b5btr0v4dd2niuumb7d6v4u",
     "company": "carelink"
   },
   {
@@ -13,22 +13,22 @@
     "deviceTime": "2013-10-05T02:00:00",
     "scheduleName": "standard",
     "value": 0.65,
-    "deviceId": "Paradigm Revel - 523",
-    "_id": "lvli77aue7p10c8f1en0k5p0nt9gn3gm",
+    "deviceId": "Paradigm Revel - 723",
+    "_id": "thk816d4obc053amrd9se8fuals47cjs",
     "company": "carelink"
   },
   {
     "type": "smbg",
     "deviceTime": "2013-10-05T21:03:51",
     "value": 90,
-    "deviceId": "Paradigm Revel - 523",
-    "_id": "9ltov1jst7mj7aul5ua12oj7dggfi4m0",
+    "deviceId": "Paradigm Revel - 723",
+    "_id": "r5bp3e445ta1ld1lblmvr3u0hg5d1qp1",
     "company": "carelink"
   },
   {
     "type": "wizard",
     "deviceTime": "2014-02-09T20:45:16",
-    "deviceId": "Paradigm 522",
+    "deviceId": "Paradigm Revel - 723",
     "payload": {
       "estimate": 5.1,
       "targetLow": 106,
@@ -43,8 +43,8 @@
       "foodEstimate": 4.9,
       "activeInsulin": 0
     },
-    "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
-    "_id": "l0ebruq4kuu5nvlfsh32jb2vptnhhijv",
+    "joinKey": "n5gs8ecrjemi0clhm9sddetq9n4m7q8j",
+    "_id": "ja39g59jfjgqcd5ap9e77hnv6ic6knth",
     "company": "carelink"
   },
   {
@@ -54,9 +54,9 @@
     "value": 1.7,
     "programmed": 2.3,
     "duration": 3600000,
-    "deviceId": "Paradigm 522",
-    "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
-    "_id": "ebdptl9ss2b7dpcj07thscrivukalpr3",
+    "deviceId": "Paradigm Revel - 723",
+    "joinKey": "n5gs8ecrjemi0clhm9sddetq9n4m7q8j",
+    "_id": "1s2ouqfdg7i20is6tr20grmholt205hl",
     "company": "carelink"
   },
   {
@@ -65,9 +65,9 @@
     "deviceTime": "2014-01-25T23:35:12",
     "value": 3.6,
     "programmed": 3.6,
-    "deviceId": "Paradigm 522",
-    "joinKey": "4873u9sm83aikv368lq5v91m421a8akn",
-    "_id": "tscn1r901v0bgbcnj4v5pk5c8rehsvlb",
+    "deviceId": "Paradigm Revel - 723",
+    "joinKey": "n5gs8ecrjemi0clhm9sddetq9n4m7q8j",
+    "_id": "f05qtvceanoa0pd53q8u34m189ksflcc",
     "company": "carelink"
   },
   {
@@ -228,9 +228,9 @@
     "deviceTime": "2013-10-05T20:17:54",
     "value": 5.4,
     "programmed": 5.4,
-    "deviceId": "Paradigm Revel - 523",
-    "joinKey": "f9lccoc8329i8gtoq9nclu94l7v916m5",
-    "_id": "a36rmm9e3cacqk35nbhvm98a5jh42ngj",
+    "deviceId": "Paradigm Revel - 723",
+    "joinKey": "n5vbj33d4qj9p5lmgnat427n337ulfiq",
+    "_id": "e8i0i9vk521sevarfvjhnt0281u0tcfd",
     "company": "carelink"
   }
 ]
