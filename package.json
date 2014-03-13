@@ -9,6 +9,12 @@
   "files": [
     "lib"
   ],
+  "config": {
+    "blanket": {
+      "pattern": "/lib",
+      "data-cover-never": "node_modules"
+    }
+  },
   "dependencies": {
     "amoeba": "0.0.7",
     "common": "0.2.5",
