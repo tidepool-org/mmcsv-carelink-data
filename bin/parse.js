@@ -15,6 +15,10 @@
  * == BSD2 LICENSE ==
  */
 
+/*
+ * A stupid utility to parse a file.  Pass the file you want parsed to this script as the first argument
+ */
+
 // Require this to get things registered with rx
 require('../lib/rx');
 

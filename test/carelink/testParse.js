@@ -22,14 +22,14 @@ var rx = require('rx');
 
 var carelink = require('../../lib/carelink');
 
-describe('carelink/parse', function () {
+function testParser(dir) {
   it('should parse as expected', function (done) {
-    rx.Node.fromStream(fs.createReadStream(__dirname + '/input.csv'))
+    rx.Node.fromStream(fs.createReadStream(dir + '/input.csv'))
       .apply(carelink.fromCsv)
       .toArray()
       .subscribe(
       function(e) {
-        var expectation = JSON.parse(fs.readFileSync(__dirname + '/output.json'));
+        var expectation = JSON.parse(fs.readFileSync(dir + '/output.json'));
         expect(e).deep.equals(expectation);
         done();
       },
@@ -37,5 +37,15 @@ describe('carelink/parse', function () {
         done(err);
       }
     );
+  });
+}
+
+describe('carelink/parse', function () {
+  describe('withSettingsChanges', function(){
+    testParser(__dirname + '/../resources/parse/withSettingsChanges');
+  });
+
+  describe('withoutSettingsChanges', function(){
+    testParser(__dirname + '/../resources/parse/withoutSettingsChanges');
   });
 });
