@@ -1,3 +1,7 @@
+# DEPRECATED 
+
+Parsing is now done as part of [the uploader](https://github.com/tidepool-org/chrome-uploader)
+
 mmcsv
 ===========
 
